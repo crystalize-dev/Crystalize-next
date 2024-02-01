@@ -18,20 +18,11 @@ button, a, img {
 
 * {
     min-width: 0;
-    box-sizing: border-box;
 }
 
 .animateBubble {
     animation: morph 8s ease-in-out infinite;
 }
-
-.animateTyping {
-    overflow: hidden;
-    border-right: .15em solid var(--main);
-    letter-spacing: .15em;
-    animation: blink-caret .75s step-end infinite;
-}
-
 
 ::-webkit-scrollbar {
     width: 10px;

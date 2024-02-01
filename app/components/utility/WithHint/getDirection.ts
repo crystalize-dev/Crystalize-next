@@ -1,6 +1,6 @@
 export type DirectionType = 'left' | 'right' | 'bottom' | 'top';
 
-const delay = 0.2
+const delay = 0.2;
 
 export const getDirection = (direction: DirectionType) => {
     switch (direction) {

@@ -9,7 +9,12 @@ const MainButton = ({ children, ...props }: ButtonProps) => {
 
     return (
         <button
-            className={'bg-main text-white py-3 px-5 rounded-full cursor-pointer border-2 border-solid border-transparent hover:border-main hover:bg-transparent hover:text-white transition-all ' + className} {...propsWithoutClass}>
+            className={
+                'cursor-pointer rounded-full border-2 border-solid border-transparent bg-main px-5 py-3 text-white transition-all hover:border-main hover:bg-transparent hover:text-white ' +
+                className
+            }
+            {...propsWithoutClass}
+        >
             {children}
         </button>
     );

@@ -3,9 +3,9 @@ import { animate, motion, useMotionValue, useTransform } from 'framer-motion';
 import CursorBlinker from '@/app/components/utility/TypingText/CursorBlinker';
 
 interface TypingProps {
-    text: string,
-    duration?: number,
-    className?: string
+    text: string;
+    duration?: number;
+    className?: string;
 }
 
 const TypingText = ({ text, duration = 2, className }: TypingProps) => {
@@ -29,11 +29,9 @@ const TypingText = ({ text, duration = 2, className }: TypingProps) => {
 
     return (
         <span className={className}>
-      <motion.span>
-          {displayText}
-      </motion.span>
-      <CursorBlinker />
-    </span>
+            <motion.span>{displayText}</motion.span>
+            <CursorBlinker />
+        </span>
     );
 };
 

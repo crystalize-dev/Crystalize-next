@@ -14,23 +14,37 @@ const Navbar = ({ options }: NavbarProps) => {
 
     return (
         <motion.nav
-            initial={{bottom: '1rem'}}
+            initial={{ bottom: '1rem' }}
             animate={open ? { bottom: '1rem' } : { bottom: '-4rem' }}
-            className={`fixed mx-auto rounded-full px-4 py-2 z-50 backdrop-blur-lg justify-center bg-black/15 flex items-center gap-4`}>
+            className={`fixed z-50 mx-auto flex items-center justify-center gap-4 rounded-full bg-black/15 px-4 py-2 backdrop-blur-lg`}
+        >
+            <Icon
+                onClick={() => setOpen(!open)}
+                icon={'arrowUp'}
+                className={`active:!hover-105 absolute -top-0 !max-h-8 !max-w-8 -translate-y-full cursor-pointer text-white transition-all hover:scale-110 ${open && 'rotate-180'}`}
+            />
 
-            <Icon onClick={() => setOpen(!open)} icon={'arrowUp'}
-                  className={`active:!hover-105 hover:scale-110 transition-all absolute text-white cursor-pointer -top-0 -translate-y-full !max-w-8 !max-h-8 ${open && 'rotate-180'}`} />
-
-            {
-                options.map(option => <WithHint key={option.link} hint={option.link} direction={'top'}>
-                    <motion.a href={'#' + option.link}
-                              whileHover={{ scale: 1.1, boxShadow: '3px 3px 12px 3px rgba(0,0,0,0.1)' }}
-                              initial={{ color: 'white' }}
-                              className={'bg-main rounded-full min-w-12 min-h-12 max-h-12 max-w-12 flex items-center justify-center p-3'}>
-                        <Icon
-                            icon={option.icon} /></motion.a>
-                </WithHint>)
-            }
+            {options.map((option) => (
+                <WithHint
+                    key={option.link}
+                    hint={option.link}
+                    direction={'top'}
+                >
+                    <motion.a
+                        href={'#' + option.link}
+                        whileHover={{
+                            scale: 1.1,
+                            boxShadow: '3px 3px 12px 3px rgba(0,0,0,0.1)'
+                        }}
+                        initial={{ color: 'white' }}
+                        className={
+                            'flex max-h-12 min-h-12 min-w-12 max-w-12 items-center justify-center rounded-full bg-main p-3'
+                        }
+                    >
+                        <Icon icon={option.icon} />
+                    </motion.a>
+                </WithHint>
+            ))}
         </motion.nav>
     );
 };

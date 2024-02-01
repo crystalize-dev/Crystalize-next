@@ -11,12 +11,12 @@ interface IProps {
 }
 
 export default function WithHint({
-                                     hint,
-                                     direction,
-                                     children,
-                                     className,
-                                     breakWord
-                                 }: IProps) {
+    hint,
+    direction,
+    children,
+    className,
+    breakWord
+}: IProps) {
     const [isHover, setHover] = React.useState(false);
 
     const directionObj = getDirection(direction);
@@ -28,7 +28,7 @@ export default function WithHint({
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
             className={
-                `relative capitalize  flex h-fit w-fit items-center ${directionObj.align}` +
+                `relative flex  h-fit w-fit items-center capitalize ${directionObj.align}` +
                 className
             }
         >
@@ -43,7 +43,7 @@ export default function WithHint({
                         variants={directionObj.variants}
                         className={`${
                             directionObj.margin
-                        } pointer-events-none absolute !bg-black z-40 h-fit w-fit select-none whitespace-nowrap rounded-lg px-3 py-1 font-semibold text-zinc-400 shadow-lg dark:bg-darker-bg ${
+                        } dark:bg-darker-bg pointer-events-none absolute z-40 h-fit w-fit select-none whitespace-nowrap rounded-lg !bg-black px-3 py-1 font-semibold text-zinc-400 shadow-lg ${
                             breakWord ? '!whitespace-pre' : ''
                         }`}
                     >

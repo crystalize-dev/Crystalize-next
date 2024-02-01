@@ -1,23 +1,25 @@
-import type { Metadata } from "next";
-import { Ubuntu } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Ubuntu } from 'next/font/google';
+import './globals.css';
 
-const ubuntu = Ubuntu({subsets: ['latin'],
-  weight: ['400', '500', '700']});
+const ubuntu = Ubuntu({
+    subsets: ['latin'],
+    weight: ['400', '500', '700']
+});
 
 export const metadata: Metadata = {
-  title: "Crystalize-Next",
-  description: "My brand new portfolio",
+    title: 'Crystalize-Next',
+    description: 'My brand new portfolio'
 };
 
 export default function RootLayout({
-  children,
+    children
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={ubuntu.className}>{children}</body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body className={ubuntu.className}>{children}</body>
+        </html>
+    );
 }
