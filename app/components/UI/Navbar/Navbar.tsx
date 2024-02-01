@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { LinkType } from '@/app/types/LinkTypes';
 import Icon from '@/app/components/Icon/Icon';
 import { motion } from 'framer-motion';
-import WithHint from '@/app/components/utility/WithHint';
+import WithHint from '@/app/components/utility/WithHint/WithHint';
 
 interface NavbarProps extends React.HTMLAttributes<HTMLDivElement> {
     options: Array<LinkType>;
@@ -14,6 +14,7 @@ const Navbar = ({ options }: NavbarProps) => {
 
     return (
         <motion.nav
+            initial={{bottom: '1rem'}}
             animate={open ? { bottom: '1rem' } : { bottom: '-4rem' }}
             className={`fixed mx-auto rounded-full px-4 py-2 z-50 backdrop-blur-lg justify-center bg-black/15 flex items-center gap-4`}>
 

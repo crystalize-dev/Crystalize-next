@@ -12,7 +12,8 @@ const config: Config = {
         'full-gap': 'calc(100% + 0.5rem)',
       },
       colors: {
-        main: 'var(--main)'
+        main: 'var(--main)',
+        gradient: 'linear-gradient(to bottom, var(--main), var(--main-darker)'
       }
     },
   },
